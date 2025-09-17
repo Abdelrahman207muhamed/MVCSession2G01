@@ -11,10 +11,13 @@ namespace MVCSession2G01
             builder.Services.AddControllersWithViews();//Register Built-in MVC Services
             
             var app = builder.Build();
-
+            // configure midlleware
             // app.MapGet("/", () => "Hello World!");
             //// app.MapGet("/login", () => "You Are Sign In!");
             // app.MapGet("/login", () => Signin);
+
+            app.UseStaticFiles(); // Configure Middleware Static Files 
+
 
             // MVC
             app.MapControllerRoute(
