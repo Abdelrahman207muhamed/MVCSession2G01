@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVCSession2G01.Models;
 
 namespace MVCSession2G01.Controllers
 {
@@ -64,32 +65,42 @@ namespace MVCSession2G01.Controllers
 
 
         // Any Action I Will Create in Mvc Controller html El Returnt Type IActionResult
-        [ActionName("GetMovie")]
-        public IActionResult GetMovieByIdWithCategoryDramaAndPoster(int id)
-        {
-            if (id == 1)
-            {
-                //return new ContentResult() { Content = $"Add Movie With Id: {id}", ContentType = "text/html" };
-                return Content($"Add Movie With Id: {id}", "text/html");
-            } 
-            else if (id == 2)
-            {
-                //return new ContentResult(){ Content = $"Add Movie With Id: {id}", ContentType = "object/pdf" };
-                return Content($"Add Movie With Id: {id}", "object/pdf");
-            } 
-            else if (id == 3)
-            {
-                // return new RedirectResult("https://google.com/");
-                return Redirect("https://google.com/");
-            }
-            
-            else
-            {
-               // return new RedirectToActionResult("AddMovie", "Movie", new { id = 133 });
-                return RedirectToAction("AddMovie", "Movie", new { id = 133 });
-            }
+        //[ActionName("GetMovie")]
+        //public IActionResult GetMovieByIdWithCategoryDramaAndPoster(int id)
+        //{
+        //    if (id == 1)
+        //    {
+        //        //return new ContentResult() { Content = $"Add Movie With Id: {id}", ContentType = "text/html" };
+        //        return Content($"Add Movie With Id: {id}", "text/html");
+        //    } 
+        //    else if (id == 2)
+        //    {
+        //        //return new ContentResult(){ Content = $"Add Movie With Id: {id}", ContentType = "object/pdf" };
+        //        return Content($"Add Movie With Id: {id}", "object/pdf");
+        //    } 
+        //    else if (id == 3)
+        //    {
+        //        // return new RedirectResult("https://google.com/");
+        //        return Redirect("https://google.com/");
+        //    }
+
+        //    else
+        //    {
+        //       // return new RedirectToActionResult("AddMovie", "Movie", new { id = 133 });
+        //        return RedirectToAction("AddMovie", "Movie", new { id = 133 });
+        //    }
+        //}
+
+        //Actions Parameter Binding
+        //1.Form
+        //2.Segment
+        //3.Query Params
+        //4.Files
+        public IActionResult GetMovie(Movie movie)
+        { 
+            return Content($"Get Movie With Id: {movie.id},Name : {movie.Name}", "text/html");
+
         }
 
-        
     }
 }

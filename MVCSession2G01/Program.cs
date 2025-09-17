@@ -19,7 +19,7 @@ namespace MVCSession2G01
             // MVC
             app.MapControllerRoute(
                 name:"default",
-                pattern:"{controller=Movie}/{action=GetMovie}/{id}"
+                pattern:"{controller=Movie}/{action=GetMovie}/{id?}"
                 );
 
 
