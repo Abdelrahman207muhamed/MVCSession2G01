@@ -4,8 +4,8 @@ namespace MVCSession2G01.Controllers
 {
     public class HomeController : Controller
     {
-        // View : HTML Page 
-        // Razor Page : HTML + C#
+        //View :HTML Page
+        //Razor Page :Html + C#
         public IActionResult Index()
         {
             return View();
@@ -15,7 +15,6 @@ namespace MVCSession2G01.Controllers
         {
             return View();
         }
-
         public IActionResult ContactUs()
         {
             return View();
@@ -25,9 +24,6 @@ namespace MVCSession2G01.Controllers
         {
             return View();
         }
-
-
-
-
     }
+
 }
